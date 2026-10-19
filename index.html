@@ -503,12 +503,12 @@
 
   function calculate() {
     const periodsPerYear = parseInt(payFrequencyEl.value, 10) || 26;
-    const annualHours = Math.max(0, parseFloat(annualPtoHoursEl.value) || 0);
-    const curBalance = Math.max(0, parseFloat(currentBalanceEl.value) || 0);
+    const annualHours = Math.max(0, Math.max(0, parseFloat(annualPtoHoursEl.value) || 0));
+    const curBalance = Math.max(0, Math.max(0, parseFloat(currentBalanceEl.value) || 0));
     const months = parseInt(projectionMonthsEl.value, 10) || 6;
-    const plannedUsed = Math.max(0, parseFloat(plannedTimeOffEl.value) || 0);
-    const cap = Math.max(0, parseFloat(accrualCapEl.value) || 0);
-    const salary = Math.max(0, parseFloat(annualSalaryEl.value) || 0);
+    const plannedUsed = Math.max(0, Math.max(0, parseFloat(plannedTimeOffEl.value) || 0));
+    const cap = Math.max(0, Math.max(0, parseFloat(accrualCapEl.value) || 0));
+    const salary = Math.max(0, Math.max(0, parseFloat(annualSalaryEl.value) || 0));
 
     // Accrual per pay period
     const ratePerPeriod = annualHours / periodsPerYear;
